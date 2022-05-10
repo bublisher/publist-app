@@ -1,4 +1,5 @@
 import Lnb from "./component/Lnb";
+import Main from "./component/Main";
 import GlobalStyles from "./common/GlobalStyles";
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <Lnb />
+      <Main />
     </>
   );
 };

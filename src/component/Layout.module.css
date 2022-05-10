@@ -20,3 +20,46 @@
   color: rgba(255, 255, 255);
   text-decoration: none;
 }
+
+.content {
+  background: transparent;
+  color: rgb(52, 71, 103);
+  box-shadow: none;
+  padding: 1rem;
+  position: relative;
+  margin-left: 16.7rem;
+}
+
+.content header {
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
+  min-height: 3.25rem;
+  color: rgb(52, 71, 103);
+  padding: 0.15rem 1.2rem;
+  border-radius: 0.75rem;
+  background-color: #38383e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.location li {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255);
+}
+
+.location li:last-child {
+  color: rgb(255, 83, 64);
+}
+
+.location .separator {
+  margin: 0 0.2rem;
+}
