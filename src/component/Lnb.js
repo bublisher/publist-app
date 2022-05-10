@@ -1,6 +1,6 @@
 import React from "react";
 import Accordion from "./AccordionUI";
-import styles from "./Layout.module.css";
+import styles from "./Layout.module.scss";
 
 const Lnb = () => {
   return (
