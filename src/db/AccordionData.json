@@ -1,0 +1,65 @@
+{
+  "group": [
+    {
+      "id": 0,
+      "groupName": "Publishing-Hmall",
+      "menuName": [
+        { "id": 0, "menu": "GNB/공통/메인템플릿/기타" },
+        { "id": 1, "menu": "검색/상품상세" },
+        { "id": 2, "menu": "고객센터" },
+        { "id": 3, "menu": "마이페이지" },
+        { "id": 4, "menu": "쇼핑라이브" },
+        { "id": 5, "menu": "매장/전시" },
+        { "id": 6, "menu": "이벤트/프로모션" },
+        { "id": 7, "menu": "장바구니/주문" },
+        { "id": 8, "menu": "회원가입/로그인" },
+        { "id": 9, "menu": "이메일" }
+      ]
+    },
+    {
+      "id": 1,
+      "groupName": "Publishing-Mobile",
+      "menuName": [
+        { "id": 0, "menu": "GNB/공통/메인템플릿/기타" },
+        { "id": 1, "menu": "검색/상품상세" },
+        { "id": 2, "menu": "고객센터" },
+        { "id": 3, "menu": "마이페이지" },
+        { "id": 4, "menu": "쇼핑라이브" },
+        { "id": 5, "menu": "매장/전시" },
+        { "id": 6, "menu": "이벤트/프로모션" },
+        { "id": 7, "menu": "장바구니/주문" },
+        { "id": 8, "menu": "회원가입/로그인" }
+      ]
+    },
+    {
+      "id": 2,
+      "groupName": "Publishing-App",
+      "menuName": [{ "id": 0, "menu": "APP" }]
+    },
+    {
+      "id": 3,
+      "groupName": "Publishing-Company",
+      "menuName": [
+        { "id": 0, "menu": "공통" },
+        { "id": 1, "menu": "회사소개" },
+        { "id": 2, "menu": "투자정보" },
+        { "id": 3, "menu": "ESG 경영" },
+        { "id": 4, "menu": "입점 및 제휴" },
+        { "id": 5, "menu": "홍보센터" }
+      ]
+    },
+    {
+      "id": 4,
+      "groupName": "Publishing-SpLive",
+      "menuName": [
+        { "id": 0, "menu": "프론트" },
+        { "id": 1, "menu": "어드민" }
+      ]
+    },
+    {
+      "id": 5,
+      "groupName": "Publishing-Guide",
+      "menuName": [{ "id": 0, "menu": "가이드" }]
+    }
+  ]
+}

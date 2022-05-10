@@ -1,0 +1,22 @@
+.drawerWrap {
+  position: fixed;
+  top: 0;
+  width: 250px;
+  height: calc(100vh - 2rem);
+  margin: 1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+}
+
+.drawerWrap .title {
+  text-align: center;
+  padding: 1.5rem 2rem 1.5rem;
+}
+
+.drawerWrap .title a {
+  font-size: 0.875rem;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+}
