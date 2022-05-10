@@ -1,3 +1,8 @@
+/* text-color */
+$text-color-white: rgb(255, 255, 255);
+$text-color-default: rgb(52, 71, 103);
+$text-color-tango: rgb(255, 83, 64);
+
 .drawerWrap {
   position: fixed;
   top: 0;
@@ -15,7 +20,7 @@
       font-size: 0.875rem;
       font-family: Roboto, Helvetica, Arial, sans-serif;
       font-weight: 600;
-      color: rgb(255, 255, 255);
+      color: $text-color-white;
       text-decoration: none;
     }
   }
@@ -23,7 +28,7 @@
 
 .content {
   background: transparent;
-  color: rgb(52, 71, 103);
+  color: $text-color-default;
   box-shadow: none;
   padding: 1rem;
   position: relative;
@@ -34,7 +39,7 @@
     top: 1rem;
     z-index: 100;
     min-height: 3.25rem;
-    color: rgb(52, 71, 103);
+    color: $text-color-default;
     padding: 0.15rem 1.2rem;
     border-radius: 0.75rem;
     background-color: #38383e;
@@ -50,14 +55,16 @@
 
       li {
         font-size: 0.8rem;
-        color: rgb(255, 255, 255);
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        color: $text-color-white;
+        letter-spacing: 0.02857em;
 
         &.separator {
           margin: 0 0.2rem;
         }
 
         &:last-child {
-          color: rgb(255, 83, 64);
+          color: $text-color-tango;
         }
       }
     }
