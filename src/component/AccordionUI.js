@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import accordion from "../db/AccordionData.json";
 
+// styled-components
+const AccordionWrap = styled.div`
+  padding: 0 0 0.875rem;
+  &:last-child {
+    padding: 0;
+  }
+`;
+
 const AccordionNavTitle = styled.h3`
-  margin: 0 1rem;
+  margin: 0 1rem 0.5rem;
   border-radius: 0.375rem;
   background: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
   a {
@@ -17,9 +25,15 @@ const AccordionNavTitle = styled.h3`
 `;
 
 const AccordionNavList = styled.ul`
+  height 0;
   font-size: 0.875rem;
   margin: 0 1rem;
-  padding: 0.5rem 0.875rem 0.875rem;
+  padding: 0 0.875rem 0;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+  &._ui-active {
+    height: 150px;
+  }
   li {
     line-height: 1.5rem;
     a {
@@ -35,21 +49,38 @@ const AccordionNavList = styled.ul`
 `;
 
 const Accordion = () => {
+  const [selected, setSelected] = useState(0);
+
+  const toggleAccordion = (idx, childLength) => {
+    // 같은 메뉴 클릭 시 아코디언 닫기 위한 처리
+    //if (selected === idx) return setSelected(0);
+
+    console.log(childLength);
+
+    // 현재 선택한 대상의 인덱스를 useState에 저장
+    setSelected(idx);
+  };
+
   return (
     <>
-      {accordion.group.map((group) => (
-        <React.Fragment key={group.id}>
+      {accordion.group.map((group, idx) => (
+        <AccordionWrap key={group.id}>
           <AccordionNavTitle>
-            <a href="#/">{group.groupName}</a>
+            <a
+              href="#/"
+              onClick={() => toggleAccordion(idx, group.menuName.length)}
+            >
+              {group.groupName}
+            </a>
           </AccordionNavTitle>
-          <AccordionNavList>
+          <AccordionNavList className={selected === idx ? "_ui-active" : ""}>
             {group.menuName.map((menu) => (
               <li key={menu.id}>
                 <a href="#/">{menu.menu}</a>
               </li>
             ))}
           </AccordionNavList>
-        </React.Fragment>
+        </AccordionWrap>
       ))}
     </>
   );
