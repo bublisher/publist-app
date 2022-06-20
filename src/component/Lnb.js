@@ -1,12 +1,13 @@
 import React from "react";
 import Accordion from "./AccordionUI";
-import styles from "./Layout.module.scss";
+import Styles from "../styles/Layout.module.scss";
+import { Link } from "react-router-dom";
 
 const Lnb = () => {
   return (
-    <nav className={styles.drawerWrap}>
-      <div className={styles.title}>
-        <a href="#/">Publishing-LIST</a>
+    <nav className={Styles.drawerWrap}>
+      <div className={Styles.title}>
+        <Link to="/">Publishing-LIST</Link>
       </div>
       <Accordion />
     </nav>

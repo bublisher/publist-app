@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import accordion from "../db/AccordionData.json";
+import { Link } from "react-router-dom";
 
 // styled-components
 const AccordionWrap = styled.div`
@@ -25,14 +26,15 @@ const AccordionNavTitle = styled.h3`
 `;
 
 const AccordionNavList = styled.ul`
-  height 0;
+  max-height: 0;
   font-size: 0.875rem;
   margin: 0 1rem;
   padding: 0 0.875rem 0;
   overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
   &._ui-active {
-    height: 150px;
+    max-height: 9999px;
+    transition: all 0.2s cubic-bezier(1, 0, 1, 0);
   }
   li {
     line-height: 1.5rem;
@@ -49,16 +51,22 @@ const AccordionNavList = styled.ul`
 `;
 
 const Accordion = () => {
-  const [selected, setSelected] = useState(0);
+  //const [selected, setSelected] = useState(0);
+  const [value, setValue] = useState({
+    selected: 0,
+  });
 
-  const toggleAccordion = (idx, childLength) => {
+  const { selected } = value;
+
+  const toggleAccordion = (idx) => {
     // 같은 메뉴 클릭 시 아코디언 닫기 위한 처리
     //if (selected === idx) return setSelected(0);
 
-    console.log(childLength);
-
     // 현재 선택한 대상의 인덱스를 useState에 저장
-    setSelected(idx);
+    setValue({
+      ...value,
+      selected: idx,
+    });
   };
 
   return (
@@ -68,7 +76,8 @@ const Accordion = () => {
           <AccordionNavTitle>
             <a
               href="#/"
-              onClick={() => toggleAccordion(idx, group.menuName.length)}
+              title={group.groupName}
+              onClick={() => toggleAccordion(idx)}
             >
               {group.groupName}
             </a>
@@ -76,7 +85,20 @@ const Accordion = () => {
           <AccordionNavList className={selected === idx ? "_ui-active" : ""}>
             {group.menuName.map((menu) => (
               <li key={menu.id}>
-                <a href="#/">{menu.menu}</a>
+                <Link
+                  to={
+                    "pages/" +
+                    group.groupName.split("-")[1].toLowerCase() +
+                    "/" +
+                    menu.id
+                  }
+                  title={menu.menu}
+                >
+                  {menu.menu}
+                </Link>
+                {/*<a href="#/" title={menu.menu}>
+                  {menu.menu}
+            </a>*/}
               </li>
             ))}
           </AccordionNavList>
