@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import accordion from "../db/AccordionData.json";
+import accordion from "../data/AccordionData.json";
 import { Link } from "react-router-dom";
 
 // styled-components
@@ -85,15 +85,7 @@ const Accordion = () => {
           <AccordionNavList className={selected === idx ? "_ui-active" : ""}>
             {group.menuName.map((menu) => (
               <li key={menu.id}>
-                <Link
-                  to={
-                    "pages/" +
-                    group.groupName.split("-")[1].toLowerCase() +
-                    "/" +
-                    menu.id
-                  }
-                  title={menu.menu}
-                >
+                <Link to={`view/${menu.id}`} title={menu.menu}>
                   {menu.menu}
                 </Link>
                 {/*<a href="#/" title={menu.menu}>

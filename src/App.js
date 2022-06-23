@@ -1,7 +1,7 @@
 import Lnb from "./component/Lnb";
 import Header from "./component/Header";
 import Main from "./component/Main";
-import Pages from "./component/Pages";
+import View from "./component/View";
 import Notfound from "./pages/Notfound";
 import GlobalStyles from "./styles/GlobalStyles";
 import Styles from "./styles/Layout.module.scss";
@@ -18,7 +18,7 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route path="/pages/*" element={<Pages />}></Route>
+            <Route path="/view/:no" element={<View />}></Route>
             <Route path="*" element={<Notfound />}></Route>
           </Routes>
         </main>
